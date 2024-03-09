@@ -10,17 +10,23 @@
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif; /* Default font family */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set minimum height to 100% of viewport height */
   }
+
   /* Set box-sizing to border-box */
   *, *::before, *::after {
     box-sizing: border-box;
   }
+
   /* Styles for navigation bar */
   .navbar {
     background-color: #111; /* Dark background color */
     overflow: hidden;
     width: 100%; /* Full width */
   }
+
   .navbar a {
     float: left;
     display: block;
@@ -30,9 +36,11 @@
     text-decoration: none;
     transition: background-color 0.3s ease; /* Smooth background color transition */
   }
+
   .navbar a:hover {
     background-color: #333; /* Slightly lighter background color on hover */
   }
+
   /* Styles for hero section */
   .hero-section {
     background-color: #222; /* Dark background color */
@@ -42,19 +50,23 @@
     position: relative;
     width: 100%; /* Full width */
   }
+
   .hero-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   .hero-text h1 {
     font-size: 48px;
     margin-bottom: 20px;
   }
+
   .hero-text p {
     font-size: 24px;
   }
+
   /* Styles for other sections */
   .section {
     background-color: #444; /* Darker background color */
@@ -64,10 +76,12 @@
     width: 100%; /* Full width */
     margin-bottom: 40px; /* Increased margin bottom */
   }
+
   .section h2 {
     font-size: 36px;
     margin-bottom: 20px;
   }
+
   /* Styles for contact form */
   .contact-form {
     max-width: 500px;
@@ -78,6 +92,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%; /* Full width */
   }
+
   .contact-form input[type="text"],
   .contact-form input[type="email"],
   .contact-form textarea {
@@ -89,9 +104,11 @@
     background-color: #666; /* Darker input background color */
     color: #fff; /* Light text color */
   }
+
   .contact-form textarea {
     height: 150px;
   }
+
   .contact-form button {
     background-color: #777; /* Darker button background color */
     color: #fff; /* Light text color */
@@ -101,9 +118,11 @@
     cursor: pointer;
     transition: background-color 0.3s ease; /* Smooth background color transition */
   }
+
   .contact-form button:hover {
     background-color: #999; /* Slightly lighter button background color on hover */
   }
+
   /* Gallery styles */
   .gallery {
     display: grid;
@@ -113,6 +132,7 @@
     align-items: center;
     margin-top: 40px;
   }
+
   .gallery-item {
     background-color: #555; /* Darker background color */
     padding: 20px;
@@ -122,21 +142,54 @@
     border: 1px solid #666; /* Darker border color */
     transition: transform 0.3s ease; /* Smooth transform transition */
   }
+
   .gallery-item:hover {
     transform: scale(1.05); /* Scale up on hover */
   }
+
   .gallery-item img {
     max-width: 100%;
     border-radius: 5px;
     border-bottom: 1px solid #666; /* Darker border color */
     transition: opacity 0.3s ease; /* Smooth opacity transition */
   }
+
   .gallery-item:hover img {
     opacity: 0.9; /* Reduce opacity on hover */
   }
+
   .gallery-item p {
     margin-top: 10px;
     color: #fff; /* Light text color */
+  }
+
+  /* Footer styles */
+  footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+  }
+
+  footer p {
+    margin: 0;
+  }
+
+  footer .copyright {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  footer .contact-info {
+    text-align: right;
+    padding-right: 20px;
   }
 </style>
 </head>
@@ -168,37 +221,7 @@
 <div id="gallery" class="section">
   <h2>Gallery</h2>
   <div class="gallery">
-    <!-- Gallery Item 1 -->
-    <div class="gallery-item">
-      <img src="image1.jpg" alt="Image 1">
-      <p>Description of Image 1</p>
-    </div>
-    <!-- Gallery Item 2 -->
-    <div class="gallery-item">
-      <img src="image2.jpg" alt="Image 2">
-      <p>Description of Image 2</p>
-    </div>
-    <!-- Gallery Item 3 -->
-    <div class="gallery-item">
-      <img src="image3.jpg" alt="Image 3">
-      <p>Description of Image 3</p>
-    </div>
-    <!-- Add more gallery items -->
-    <!-- Gallery Item 4 -->
-    <div class="gallery-item">
-      <img src="image4.jpg" alt="Image 4">
-      <p>Description of Image 4</p>
-    </div>
-    <!-- Gallery Item 5 -->
-    <div class="gallery-item">
-      <img src="image5.jpg" alt="Image 5">
-      <p>Description of Image 5</p>
-    </div>
-    <!-- Gallery Item 6 -->
-    <div class="gallery-item">
-      <img src="image6.jpg" alt="Image 6">
-      <p>Description of Image 6</p>
-    </div>
+    <!-- Gallery items -->
   </div>
 </div>
 
@@ -217,9 +240,13 @@
 
 <!-- Footer Section -->
 <footer>
+  <div class="copyright">
     <p>&copy; 2024 Your Company. All rights reserved.</p>
+  </div>
+  <div class="contact-info">
     <p>Contact: info@example.com</p>
+  </div>
 </footer>
-  
+
 </body>
 </html>
