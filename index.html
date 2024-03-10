@@ -35,8 +35,12 @@
     height: 50px; /* Adjust height of the logo */
   }
 
-  .navbar a {
-    display: block;
+  .navbar-links {
+    display: flex; /* Display links in a horizontal line */
+  }
+
+  .navbar-links a {
+    display: inline-block; /* Display links as inline-block elements */
     color: #f2f2f2; /* Light text color */
     text-align: center;
     padding: 14px 20px;
@@ -44,7 +48,7 @@
     transition: background-color 0.3s ease; /* Smooth background color transition */
   }
 
-  .navbar a:hover {
+  .navbar-links a:hover {
     background-color: #333; /* Slightly lighter background color on hover */
   }
 
@@ -206,7 +210,7 @@
   <div>
     <img src="your-logo.png" alt="Logo"> <!-- Replace "your-logo.png" with your actual logo -->
   </div>
-  <div>
+  <div class="navbar-links">
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#gallery">Gallery</a>
