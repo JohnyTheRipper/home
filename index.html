@@ -103,6 +103,18 @@
     width: 100%; /* Full width */
   }
 
+  .contact-form input[type="text"]::after,
+  .contact-form input[type="email"]::after,
+  .contact-form textarea::after {
+    content: '';
+    display: block;
+    width: calc(100% - 20px);
+    height: 1px;
+    background-color: #007bff; /* Blue line color */
+    position: relative;
+    top: -10px;
+  }
+
   .contact-form input[type="text"],
   .contact-form input[type="email"],
   .contact-form textarea {
