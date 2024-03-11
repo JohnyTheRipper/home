@@ -78,16 +78,18 @@
     margin-bottom: 20px;
   }
 
-  /* Styls for everything else */
-
-
   /* Styles for other sections */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
   .section {
     background-color: #444; /* Darker background color */
     color: #fff; /* Light text color */
     padding: 100px 20px; /* Increased padding */
     text-align: center;
-    width: 100%; /* Full width */
   }
 
   .section h2 {
@@ -103,26 +105,13 @@
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Full width */
-  }
-
-  .contact-form input[type="text"]::after,
-  .contact-form input[type="email"]::after,
-  .contact-form textarea::after {
-    content: '';
-    display: block;
-    width: calc(100% - 20px);
-    height: 1px;
-    background-color: #007bff; /* Blue line color */
-    position: relative;
-    top: -10px;
   }
 
   .contact-form input[type="text"],
   .contact-form input[type="email"],
   .contact-form textarea {
     color: #fff; /* Lighter text color */
-    width: calc(100% - 20px); /* Full width with some padding */
+    width: 100%; /* Full width */
     padding: 10px;
     margin-bottom: 20px;
     outline: none;
@@ -132,7 +121,7 @@
   }
 
   .contact-form textarea {
-    height: 50px;
+    height: 100px;
   }
 
   .contact-form button {
@@ -199,8 +188,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    bottom: 0;
   }
 
   footer p {
@@ -224,7 +211,7 @@
 <!-- Navigation Bar -->
 <div class="navbar">
   <div>
-    <h3>Logo</h3>
+    <img src="path/to/your/logo.png" alt="Logo">
   </div>
   <div class="navbar-links">
     <a href="#home">Home</a>
@@ -235,7 +222,7 @@
 </div>
 
 <!-- Home Section -->
-<section id="home" class="hero">
+<section id="home" class="hero-section">
     <div class="container">
         <div class="hero-content">
             <h2>Welcome to My Website!</h2>
@@ -245,7 +232,7 @@
 </section>
 
 <!-- About Section -->
-<section id="about" class="about">
+<section id="about" class="section">
   <div class="container">
     <h2>About Me</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum mauris vel sapien convallis, a tempor felis luctus.</p>
@@ -259,13 +246,22 @@
     <div class="gallery">
     
       <!-- Gallery items -->
-
+      <div class="gallery-item">
+        <img src="path/to/image1.jpg" alt="Image 1">
+        <p>Caption for Image 1</p>
+      </div>
+      <div class="gallery-item">
+        <img src="path/to/image2.jpg" alt="Image 2">
+        <p>Caption for Image 2</p>
+      </div>
+      <!-- Add more gallery items as needed -->
+    
     </div>
   </div>
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="contact">
+<section id="contact" class="section">
   <div class="container">
     <h2>Get in Touch</h2>
     <div class="contact-form">
@@ -278,6 +274,7 @@
     </div>
   </div>
 </section>
+
 <!-- Footer Section -->
 <footer>
   <div class="copyright">
