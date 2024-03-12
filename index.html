@@ -20,6 +20,11 @@
     box-sizing: border-box;
   }
 
+  /* Define accent color */
+  :root {
+    --accent-color: #007bff; /* Default accent color */
+  }
+
   /* Styles for navigation bar */
   .navbar {
     background-color: #111; /* Dark background color */
@@ -29,10 +34,15 @@
     justify-content: space-between; /* Align items to the ends */
     align-items: center; /* Center vertically */
     padding: 10px 20px; /* Add padding */
+    position: fixed; /* Make navbar sticky */
+    top: 0; /* Stick to the top */
+    z-index: 1000; /* Ensure it's above other elements */
   }
 
   .navbar img {
     height: 50px; /* Adjust height of the logo */
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(277deg) brightness(104%) contrast(104%);
+    /* Use filter for dynamic color inversion */
   }
 
   .navbar-links {
@@ -41,7 +51,7 @@
 
   .navbar-links a {
     display: inline-block; /* Display links as inline-block elements */
-    color: #f2f2f2; /* Light text color */
+    color: var(--accent-color); /* Dynamic text color */
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
@@ -50,6 +60,11 @@
 
   .navbar-links a:hover {
     background-color: #333; /* Slightly lighter background color on hover */
+    border-bottom: 3px solid var(--accent-color)
+  }
+
+  .navbar-links a.active {
+    border-bottom: 3px solid var(--accent-color)
   }
 
   /* Styles for hero section */
@@ -57,12 +72,13 @@
     background-image: url('https://fakeimg.pl/1200x500');
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
+    margin-top: 0px; /* Adjust margin top to avoid overlapping with the navbar */
   }
 
   .hero-content {
@@ -116,7 +132,7 @@
     margin-bottom: 20px;
     outline: none;
     border: none; /* Remove all borders */
-    border-bottom: 1px solid #007bff; /* Blue bottom border */
+    border-bottom: 1px solid var(--accent-color); /* Dynamic bottom border color */
     background-color: transparent; /* Make Background Clear */
   }
 
@@ -125,7 +141,7 @@
   }
 
   .contact-form button {
-    background-color: #007bff; /* blue background color */
+    background-color: var(--accent-color); /* Dynamic button background color */
     color: #fff; /* Light text color */
     padding: 10px 20px;
     border: none;
@@ -196,6 +212,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Ensure footer is positioned correctly */
+    bottom: 0; /* Stick to the bottom */
   }
 
   footer p {
@@ -219,13 +237,13 @@
 <!-- Navigation Bar -->
 <div class="navbar">
   <div>
-    <img src="path/to/your/logo.png" alt="Logo">
+    <img id="logo" src="path/to/your/logo.png" alt="Logo">
   </div>
   <div class="navbar-links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#gallery" class="nav-link">Gallery</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </div>
 </div>
 
@@ -250,7 +268,7 @@
 <!-- Gallery Section -->
 <section id="gallery" class="section">
   <div class="container">
-    <h2>Gallery</h2>
+    <h2>My Gallery</h2>
     <div class="gallery">
     
       <!-- Gallery items -->
@@ -294,6 +312,7 @@
           <p>Description of Image 5</p>
         </div>
       </div>
+
       <!-- Add more gallery items as needed -->
     
     </div>
